@@ -1,37 +1,15 @@
-import { Typography } from "@mui/material";
 import React from "react";
+import useProfile from "./hooks/useProfile";
+import ProfileForm from "./ProfileForm";
 
-// type CardState = {
-//   cardNumber: any;
-//   expiryDate: string;
-//   cardName: string;
-//   cvc: string;
-//   token: string;
-// };
 
 const Profile: React.FC = () => {
-  // const [card, setCard] = useState<CardState>({
-  //   cardNumber: "",
-  //   expiryDate: "",
-  //   cardName: "",
-  //   cvc: "",
-  //   token: "",
-  // });
 
-  // const handleChangeCard = useCallback((name: string, value: string) => {
-  //   setCard((prev) => ({ ...prev, [name]: value }));
-  // }, []);
+  const {card, handleChangeCard} = useProfile();
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: ".5em" }}>
-      <Typography
-        style={{ textAlign: "center" }}
-        variant="subtitle2"
-        gutterBottom
-        component="div"
-      >
-        Информация о платежных данных
-      </Typography>
+      <ProfileForm card={card} onChange={handleChangeCard}/>
     </div>
   );
 };

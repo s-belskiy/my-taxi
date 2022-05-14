@@ -10,6 +10,16 @@ type Props = {
   title?: string | undefined;
 };
 
+const DEFAULT_MODAL_STYLE: React.CSSProperties = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  backgroundColor: "white",
+  borderRadius: "25px",
+  boxShadow: "25",
+}
+
 const CustomModal: React.FC<Props> = (props) => {
   const { open, styles, close, children, title } = props;
 
@@ -20,7 +30,7 @@ const CustomModal: React.FC<Props> = (props) => {
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
     >
-      <Box sx={styles}>
+      <Box style={{...DEFAULT_MODAL_STYLE, ...styles}}>
         <Typography style={{textAlign: 'center'}} variant="h3" gutterBottom component="div">
           {title}
         </Typography>

@@ -111,7 +111,7 @@ const AppMenu: React.FC = () => {
         <animated.div style={springProps}>
           <CustomModal
             title={"Профиль"}
-            styles={STYLES.CustomModal.container}
+            styles={{width: "30%", height: "40%", padding: '1em'}}
             open={openProfile}
             close={() => handleProfile(false)}
           >
