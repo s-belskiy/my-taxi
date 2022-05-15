@@ -10,7 +10,7 @@ const useAppMenu = (): ReturnedParams => {
 
   // states //
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const [openProfile, setOpenProfie] = useState<boolean>(false);
+  const [openProfile, setOpenProfile] = useState<boolean>(false);
 
   // callbacks //
   const handleMenu = useCallback((event: React.MouseEvent<HTMLElement>) => {
@@ -21,8 +21,8 @@ const useAppMenu = (): ReturnedParams => {
     setAnchorEl(null);
   }, []);
 
-  const handleProfile = useCallback(() => {
-    setOpenProfie((prev) => !prev);
+  const handleOpenProfile = useCallback(() => {
+    setOpenProfile((prev) => !prev);
   }, []);
 
   const handleAuth = useCallback(() => {
@@ -38,7 +38,7 @@ const useAppMenu = (): ReturnedParams => {
     handleMenu,
     handleClose,
     handleAuth,
-    handleProfile,
+    handleOpenProfile,
     openProfile,
   };
 };

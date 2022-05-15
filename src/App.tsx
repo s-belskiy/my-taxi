@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import AppMenu from "./components/AppMenu/AppMenu";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AuthPage from "./components/Auth/Auth";
-import Profile from "./components/Profile/Profile"
 import { useDispatch } from "react-redux";
 import Map from "./components/Map/Map";
 
@@ -29,7 +28,6 @@ const App: React.FunctionComponent = () => {
             </div>
           }
         />
-        <Route path="profile" element={<Profile />} />
         <Route path="auth" element={<AuthPage />} />
       </Routes>
     </BrowserRouter>

@@ -12,7 +12,6 @@ import LoginIcon from "@mui/icons-material/Login";
 import { SPRING_STYLES, STYLES } from "./modules/AppMenu.module";
 import { AccountCircle } from "@mui/icons-material";
 import useAppMenu from "./hooks/useAppMenu";
-import CustomModal from "../Layouts/Modal/CustomModal";
 import Profile from "../Profile/Profile";
 import { useSpring, animated } from "react-spring";
 
@@ -24,7 +23,7 @@ const AppMenu: React.FC = () => {
     handleMenu,
     handleClose,
     handleAuth,
-    handleProfile,
+    handleOpenProfile,
     openProfile,
   } = useAppMenu();
 
@@ -68,7 +67,7 @@ const AppMenu: React.FC = () => {
             open={Boolean(anchorEl)}
             onClose={handleClose}
           >
-            <MenuItem onClick={() => handleProfile(true)}>Профиль</MenuItem>
+            <MenuItem onClick={() => handleOpenProfile(true)}>Профиль</MenuItem>
             <MenuItem onClick={handleAuth}>Выйти</MenuItem>
           </Menu>
         </div>
@@ -80,10 +79,10 @@ const AppMenu: React.FC = () => {
     handleAuth,
     handleClose,
     handleMenu,
-    handleProfile,
+    handleOpenProfile,
   ]);
 
-  const noAuthorizedMenutItem = useMemo(() => {
+  const noAuthorizedMenuItem = useMemo(() => {
     return (
       !authSuccessfully && (
         <Button
@@ -104,19 +103,12 @@ const AppMenu: React.FC = () => {
       <AppBar style={STYLES.appMenu.appBar} position="static">
         <Toolbar style={STYLES.appMenu.toolbar}>
           {logoMenuItem}
-          {authSuccessfully ? authorizedMenuItem : noAuthorizedMenutItem}
+          {authSuccessfully ? authorizedMenuItem : noAuthorizedMenuItem}
         </Toolbar>
       </AppBar>
       {openProfile && (
         <animated.div style={springProps}>
-          <CustomModal
-            title={"Профиль"}
-            styles={{width: "30%", height: "40%", padding: '1em'}}
-            open={openProfile}
-            close={() => handleProfile(false)}
-          >
-            <Profile />
-          </CustomModal>
+            <Profile handleOpenProfile={handleOpenProfile} openProfile={openProfile} />
         </animated.div>
       )}
     </div>

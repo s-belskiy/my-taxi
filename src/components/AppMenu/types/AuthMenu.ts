@@ -4,6 +4,6 @@ export type ReturnedParams = {
   handleMenu: (event: React.MouseEvent<HTMLElement>) => void;
   handleClose: () => void;
   handleAuth: () => void;
-  handleProfile: (openProfile: boolean) => void;
+  handleOpenProfile: (openProfile: boolean) => void;
   openProfile: boolean,
 };
