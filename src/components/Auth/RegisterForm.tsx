@@ -17,31 +17,25 @@ const RegisterForm: React.FC<Props> = ({ onChangeAuthType, data, handleChangeDat
     <div style={STYLES.container}>
       <TextField
         fullWidth
-        id="standard-basic"
         value={email}
         onChange={handleChange}
         name="email"
-        defaultValue={null}
         label="Введите email"
         variant="standard"
       />
       <TextField
         fullWidth
-        id="standard-basic"
         value={name}
         onChange={handleChange}
         name="name"
-        defaultValue={null}
         label="Введите имя"
         variant="standard"
       />
       <TextField
         fullWidth
-        id="standard-basic"
         value={surname}
         onChange={handleChange}
         name="surname"
-        defaultValue={null}
         label="Введите фамилию"
         variant="standard"
       />
@@ -52,7 +46,6 @@ const RegisterForm: React.FC<Props> = ({ onChangeAuthType, data, handleChangeDat
         value={password}
         onChange={handleChange}
         name="password"
-        defaultValue={null}
         label="Введите пароль"
         type="password"
       />

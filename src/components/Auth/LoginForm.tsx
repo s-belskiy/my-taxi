@@ -21,7 +21,6 @@ const LoginForm: React.FC<Props> = ({onChangeAuthType,handleChangeData,data,onSi
         value={email}
         onChange={handleChange}
         name="email"
-        defaultValue={null}
         label="Введите email"
         variant="standard"
       />
@@ -32,7 +31,6 @@ const LoginForm: React.FC<Props> = ({onChangeAuthType,handleChangeData,data,onSi
         value={password}
         onChange={handleChange}
         name="password"
-        defaultValue={null}
         label="Введите пароль"
         type="password"
       />

@@ -35,8 +35,6 @@ const ProfileForm: React.FC<CardProps> = ({ card, onChange }) => {
 						<TextField
 							style={{ width: '100%' }}
 							label='Номер карты'
-							type='number'
-							defaultValue={undefined}
 							name='cardNumber'
 							value={cardNumber}
 							onChange={handleChange}
@@ -61,7 +59,6 @@ const ProfileForm: React.FC<CardProps> = ({ card, onChange }) => {
 							style={{ width: '100%' }}
 							value={cardName}
 							onChange={handleChange}
-							defaultValue=""
 							variant='filled'
 						/>
 						<div style={{ display: 'flex', gap: '1em', width: '100%' }}>
@@ -72,7 +69,6 @@ const ProfileForm: React.FC<CardProps> = ({ card, onChange }) => {
 								value={expiryDate}
 								onChange={handleChange}
 								InputLabelProps={{ shrink: true }}
-								defaultValue={undefined}
 								variant='filled'
 							/>
 							<TextField
@@ -83,7 +79,6 @@ const ProfileForm: React.FC<CardProps> = ({ card, onChange }) => {
 								onChange={handleChange}
 								InputLabelProps={{ shrink: true }}
 								variant='filled'
-								defaultValue={undefined}
 							/>
 						</div>
 					</div>
