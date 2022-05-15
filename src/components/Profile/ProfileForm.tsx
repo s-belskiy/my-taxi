@@ -28,7 +28,7 @@ const ProfileForm: React.FC<CardProps> = ({ card, onChange }) => {
 						display: 'flex',
 						flexDirection: 'column',
 						gap: '1em',
-						width: '65%',
+						width: '100%',
 					}}
 				>
 					<div style={{ display: 'flex', gap: '.5em', width: '100%' }}>
