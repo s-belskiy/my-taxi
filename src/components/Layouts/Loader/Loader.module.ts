@@ -9,5 +9,9 @@ export const STYLES: { [key: string]: React.CSSProperties } = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    background: '#ffffff',
+    opacity: '.7',
+    borderRadius: '25px'
+
   },
 };
