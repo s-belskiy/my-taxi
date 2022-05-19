@@ -1,10 +1,10 @@
 import React from "react";
-import { STYLES } from "./modules/Auth.module";
 import AuthCard from "./AuthCard";
+import "./scss/Auth.scss"
 
 const AuthPage: React.FC = () => {
   return (
-    <div style={STYLES.container}>
+    <div className="authPage">
       <AuthCard />
     </div>
   );

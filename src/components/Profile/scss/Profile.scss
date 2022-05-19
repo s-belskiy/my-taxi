@@ -1,0 +1,18 @@
+.profileContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5em;
+}
+
+
+.actionsContainer {
+	display: flex;
+	width: 100%;
+	.successButton {
+		border-radius: 12px;
+	}
+	.cancelButton {
+		border-radius: 12px;
+		margin-left: auto;
+	}
+}

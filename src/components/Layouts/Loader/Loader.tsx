@@ -1,9 +1,9 @@
 import { CircularProgress } from "@mui/material";
-import { STYLES } from "./Loader.module";
+import "./Loader.scss";
 
 const Loader: React.FC = () => {
   return (
-    <div style={STYLES.container}>
+    <div className="loaderContainer">
       <CircularProgress color="inherit" />
     </div>
   );

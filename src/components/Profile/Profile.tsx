@@ -3,6 +3,13 @@ import React, { useMemo } from 'react';
 import CustomModal from '../Layouts/Modal/CustomModal';
 import useProfile from './hooks/useProfile';
 import ProfileForm from './ProfileForm';
+import "./scss/Profile.scss"
+
+const additionalModalStyles = {
+	width: '30%',
+	height: '40%',
+	padding: '1em',
+};
 
 type ProfileProps = {
 	openProfile: boolean;
@@ -25,17 +32,17 @@ const Profile: React.FC<ProfileProps> = ({
 
 	const actions = useMemo(() => {
 		return (
-			<div style={{ display: 'flex', width: '100%' }}>
+			<div className='actionsContainer'>
 				<Button
 					onClick={() => handleSaveCard()}
-					style={{ borderRadius: '25px' }}
+					className='successButton'
 					variant='contained'
 					color='success'
 				>
 					Сохранить
 				</Button>
 				<Button
-					style={{ marginLeft: 'auto', borderRadius: '25px' }}
+					className='cancelButton'
 					variant='contained'
 					onClick={() => handleOpenProfile(false)}
 					color='error'
@@ -49,13 +56,13 @@ const Profile: React.FC<ProfileProps> = ({
 	return (
 		<CustomModal
 			title={'Профиль'}
-			styles={{ width: '30%', height: '40%', padding: '1em' }}
+			styles={additionalModalStyles}
 			open={openProfile}
 			actions={actions}
 			close={() => handleOpenProfile(false)}
 			loading={loading || updating}
 		>
-			<div style={{ display: 'flex', flexDirection: 'column', gap: '.5em' }}>
+			<div className='profileContainer'>
 				<ProfileForm
 					loading={loading}
 					error={error}

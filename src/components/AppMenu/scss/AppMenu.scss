@@ -1,0 +1,50 @@
+@import '../../../global.scss';
+@import '../../../scss/mixins.scss';
+
+.appMenuContainer {
+	width: $fluid;
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	top: 2em;
+	opacity: 1;
+
+	.navbar {
+		width: calc(100% - 10%);
+		@include glass();
+		border-radius: 12px;
+
+		.toolbar {
+			display: flex;
+
+			.authButton {
+				margin-left: auto;
+				background-color: #ffa500;
+				color: #000000;
+				border-radius: 12px;
+			}
+			.buttonContainer {
+				margin-left: auto;
+				.userIcon {
+					font-size: 40px;
+				}
+				.menu {
+					margin-top: 3.2em;
+				}
+			}
+		}
+	}
+}
+
+.modal {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 60%;
+	height: 50%;
+	background-color: #ffffff;
+	border-radius: 12px;
+	box-shadow: 24;
+	padding: 4px;
+}

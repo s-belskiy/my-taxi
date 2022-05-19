@@ -2,24 +2,33 @@ import { Modal, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
 import Loader from '../Loader/Loader';
-import { DEFAULT_MODAL_STYLE } from './modules/CustomModal.module';
 import { ModalProps } from './types/CustomModal';
+import "./scss/CustomModal.scss";
 
 const CustomModal: React.FC<ModalProps> = props => {
-	const { open, styles, close, children, title, actions, loading } = props;
+	const {
+		open,
+		styles: additionalModalStyles,
+		close,
+		children,
+		title,
+		actions,
+		loading,
+	} = props;
 
 	return (
 		<Modal
+			className='customModal'
 			open={open}
 			onClose={close}
 			aria-labelledby='modal-modal-title'
 			aria-describedby='modal-modal-description'
 		>
-			<Box style={{ ...DEFAULT_MODAL_STYLE, ...styles }}>
+			<Box className='boxCustomModal' style={additionalModalStyles}>
 				{loading && <Loader />}
-				<div style={{ height: '92%' }}>
+				<div className='customModalContent'>
 					<Typography
-						style={{ textAlign: 'center' }}
+						className='titleCustomModal'
 						variant='h3'
 						gutterBottom
 						component='div'
